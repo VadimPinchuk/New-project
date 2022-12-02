@@ -264,26 +264,25 @@ function init() {
     // Порядок по умолчанию: «широта, долгота».
     // Чтобы не определять координаты центра карты вручную,
     // воспользуйтесь инструментом Определение координат.
-    center: [55.75847411879586,37.60108849999989],
+    center: [55.75847411879586, 37.60108849999989],
     // Уровень масштабирования. Допустимые значения:
     // от 0 (весь мир) до 19.
-    zoom: 16,
-
-
+    zoom: 13,
   });
 
 
-	//myMap.controls.remove('geolocationControl'); // удаляем геолокацию
-  myMap.controls.remove('searchControl'); // удаляем поиск
-  myMap.controls.remove('trafficControl'); // удаляем контроль трафика
-  myMap.controls.remove('typeSelector'); // удаляем тип
-  myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
- // myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
-  myMap.controls.remove('rulerControl'); // удаляем контрол правил
-  myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+  //myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+  myMap.controls.remove("searchControl"); // удаляем поиск
+  myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+  myMap.controls.remove("typeSelector"); // удаляем тип
+  myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+  // myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+  myMap.controls.remove("rulerControl"); // удаляем контрол правил
+  myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
 
   var myPlacemark = new ymaps.Placemark(
-    [55.75847411879586,37.60108849999989],
+    [55.75847411879586, 37.60108849999989],
     {},
     {
       iconLayout: "default#image",
@@ -296,6 +295,53 @@ function init() {
   // Размещение геообъекта на карте.
 
   myMap.geoObjects.add(myPlacemark);
-
-
 }
+
+// Validate
+
+var selector = document.querySelector("input[type='tel']");
+
+var im = new Inputmask("+7(999) 999-99-99");
+im.mask(selector);
+
+let validation = new JustValidate("#form", {
+  errorLabelStyle: {
+    color: "#D11616",
+  },
+});
+
+validation.addField("#name", [
+  {
+    rule: "required",
+    errorMessage: "Вы не ввели имя",
+  },
+  {
+    rule: "minLength",
+    value: 3,
+    errorMessage: "Минимум 3 символа",
+  },
+  {
+    rule: "maxLength",
+    value: 30,
+    errorMessage: "Максимум 30 символов",
+  },
+]);
+
+
+validation.addField("#tel", [
+  {
+    validator: (value) => {
+      const tel = selector.inputmask.unmaskedvalue();
+      return Boolean(Number(tel) && tel.length > 0);
+    },
+    errorMessage: "Вы не ввели телефон",
+  },
+  {
+    validator: (value) => {
+      const tel = selector.inputmask.unmaskedvalue();
+      return Boolean(Number(tel) && tel.length === 10);
+    },
+    errorMessage: "Введите телефон полностью",
+  },
+]);
+
