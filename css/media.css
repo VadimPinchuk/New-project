@@ -1,0 +1,141 @@
+/* Адаптивная высота слайда регулируется относительно его ширины с помощью padding-top в % для псевдоэлемента ::before */
+
+@media (max-width: 1440px) {
+  .header__logo {
+    margin-right: 0px;
+  }
+
+  .nav__item + .nav__item {
+    margin-left: 25px;
+  }
+
+  .header__enter-link {
+    margin-left: 0;
+  }
+
+  .main__item:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  .painter-descr-panel {
+    padding-right: 15px;
+  }
+
+  .accordion__inner-list {
+    column-count: 2;
+  }
+
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contacts__address {
+    margin-bottom: 30px;
+  }
+
+  .contacts__form {
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contacts__messenger {
+    margin-bottom: 43px;
+  }
+}
+
+@media (max-width: 1219px) {
+  .header__nav {
+    display: none;
+  }
+  .header__enter-link {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    z-index: 8;
+  }
+
+
+  .header__search {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    z-index: 8;
+  }
+
+  .header-bottom {
+    display: none;
+  }
+
+  .accordion__content-img {
+    max-width: 173px;
+  }
+
+  .doings__article-place {
+    padding-right: 34px;
+    text-align: right;
+  }
+
+  .doings__article-time {
+    padding-right: 34px;
+    text-align: right;
+  }
+
+  .doings__article-title {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .doings__article-text {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .doings__article-link {
+    padding-left: 34px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .gallery__swiper-slide::before {
+    padding-top: calc(85% - 6px);
+  }
+
+  /* .accordion__question {
+    width: calc(100% / 2 - 30px);
+  } */
+}
+
+@media (max-width: 768px) {
+  .gallery__swiper {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .gallery__swiper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .gallery__swiper-navigation {
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  .gallery__swiper-slide::before {
+    padding-top: calc(110% - 6px);
+  }
+}

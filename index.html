@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/media.css">
   <title>Blanchard</title>
 </head>
 
@@ -21,13 +22,66 @@
     <div class="header-top">
       <div class="container">
         <div class="header-top__wrapper">
+          <button class="burger btn-reset">
+            <svg class="burger__img" width="36" height="29" viewBox="0 0 36 29" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="3.65217" transform="matrix(-1 0 0 1 36 0.700012)" />
+              <path d="M28.2002 12.8739H0.00019455V16.5261H28.2002V12.8739Z" />
+              <path d="M24 25.0479H0V28.7H24V25.0479Z" />
+            </svg>
+          </button>
+
+          <nav class="burger__nav" inert>
+            <button class="burger__close-btn btn-reset">
+              <svg width="29" height="29" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="29.567" height="2.9567"
+                  transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09375 0)" />
+                <rect width="29.567" height="2.9567"
+                  transform="matrix(0.707093 -0.707121 0.707093 0.707121 0 20.9074)" />
+              </svg>
+            </button>
+            <ul class="burger__nav-list">
+              <li class="burger__nav-item">
+                <a href="#about" class="nav__link"><span>О нас</span></a>
+              </li>
+              <li class="burger__nav-item">
+                <a href="#gallery" class="nav__link"><span>Галерея</span></a>
+              </li>
+              <li class="burger__nav-item">
+                <a href="#catalog" class="nav__link"><span>Каталог</span></a>
+              </li>
+              <li class="burger__nav-item">
+                <a href="#doings" class="nav__link"><span>События</span></a>
+              </li>
+              <li class="burger__nav-item">
+                <a href="#projects" class="nav__link"><span>Проекты</span></a>
+              </li>
+              <li class="burger__nav-item">
+                <a href="#contacts" class="nav__link"><span>Контакты</span></a>
+              </li>
+            </ul>
+            <button class="burger__enter-btn btn-reset" type="submit">
+              <svg class="burger__enter-img" width="13" height="13" viewBox="0 0 13 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
+                  fill="white" />
+              </svg>
+
+              <span class="burger__enter-text">Войти</span>
+            </button>
+          </nav>
+
+
+
+
           <a class="header__logo" tabindex="0">
             <img src="images/logo.svg" alt="logo" class="header__logo-img">
           </a>
           <nav class="header__nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#about" class="nav__link"><span>О нас</span></a>
+                <a href="#about" class="nav__link"><span>О нас</span></a>
               </li>
               <li class="nav__item">
                 <a href="#gallery" class="nav__link"><span>Галерея</span></a>
@@ -46,14 +100,42 @@
               </li>
             </ul>
           </nav>
+
           <a href="#" class="header__enter-link">
-            <svg class="header__enter-img" width="13" height="13" viewBox="0 0 13 13" fill="none"
+            <svg class="header__enter-img" width="18" height="13" viewBox="0 0 18 13" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" />
+                d="M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z" />
             </svg>
             <span class="header__enter-text">Войти</span>
           </a>
+          <button class="header__search btn-reset" id="open">
+            <svg class="header__search-img" width="30" height="29" viewBox="0 0 30 29" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="9.15446" height="2.28862"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58105 21.0461)" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" />
+            </svg>
+          </button>
+          <form class="header-bottom__form form-search" inert id="" action="#">
+            <button class="header-bottom__search-btn btn-reset" type="submit">
+              <svg class="search-btn__image" width="23" height="22" viewBox="0 0 23 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.8678" height="1.71695"
+                  transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z" />
+              </svg>
+            </button>
+            <input class="header-bottom__input form-search-input" type="text" name="input">
+            <svg tabindex="0" class="form-search-close" width="23" height="23" viewBox="0 0 23 23" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="29.567" height="2.9567" transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09375 0)" />
+              <rect width="29.567" height="2.9567" transform="matrix(0.707093 -0.707121 0.707093 0.707121 0 20.9074)" />
+            </svg>
+
+          </form>
         </div>
       </div>
     </div>
@@ -181,14 +263,14 @@
               <svg class="search-btn__image" width="23" height="22" viewBox="0 0 23 22" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="6.8678" height="1.71695"
-                  transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+                  transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" />
                 <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
-                  fill="white" />
+                  d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z" />
               </svg>
             </button>
             <input class="header-bottom__input" type="text" name="input" id="" placeholder="Поиск по сайту">
           </form>
+
         </div>
       </div>
     </div>
@@ -350,7 +432,8 @@
             Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа
             политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего
             лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии
-            и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены
+            и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены на
+            независимые элементы.
           </p>
         </div>
 
@@ -366,7 +449,9 @@
                 художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной
                 мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор
                 фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь
-                библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции </p>
+                библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в костюмах того
+                времени).
+              </p>
             </div>
             <div class="catalog__painter-info js-tab-content" data-target="empty">
               <img class="painter-img" src="./images/painter-none.jpg" alt="">
@@ -959,7 +1044,8 @@
                 autocomplete="off">
             </div>
             <div class="contacts__form-input-box">
-              <input class="contacts__form-input" type="tel" name="tel" id="tel" placeholder="Телефон*" autocomplete="off">
+              <input class="contacts__form-input" type="tel" name="tel" id="tel" placeholder="Телефон*"
+                autocomplete="off">
             </div>
             <button class="contacts__form-btn btn-reset" type="submit">Заказать обратный звонок</button>
           </form>
@@ -1053,6 +1139,7 @@
 
 
   </main>
+  <script src="./js/inert.js"></script>
   <script src="./js/inputmask.min.js"></script>
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>

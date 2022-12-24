@@ -218,6 +218,18 @@ const doingsSwiper = new Swiper(".doings__swiper", {
     nextEl: ".doings__swiper-btn-next",
     prevEl: ".doings__swiper-btn-prev",
   },
+
+  breakpoints: {
+    441: {
+      slidesPerView: 3,
+      spaceBetween: 27,
+    },
+
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  },
 });
 
 // TOOLTIPS
@@ -235,7 +247,7 @@ tippy("#tooltip2", {
 
 tippy("#tooltip3", {
   content: "В стремлении повысить качество",
-  theme: "myTheme",
+  theme: "myTheme2",
 });
 
 const projectsSwiper = new Swiper(".projects__swiper", {
@@ -250,6 +262,18 @@ const projectsSwiper = new Swiper(".projects__swiper", {
     nextEl: ".projects-button-next",
     prevEl: ".projects-button-prev",
   },
+
+  breakpoints: {
+    441: {
+      slidesPerView: 2,
+      spaceBetween: 50,
+    },
+
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  },
 });
 
 // MAP
@@ -259,17 +283,18 @@ const projectsSwiper = new Swiper(".projects__swiper", {
 ymaps.ready(init);
 function init() {
   // Создание карты.
-  var myMap = new ymaps.Map("map", {
-    // Координаты центра карты.
-    // Порядок по умолчанию: «широта, долгота».
-    // Чтобы не определять координаты центра карты вручную,
-    // воспользуйтесь инструментом Определение координат.
-    center: [55.75847411879586, 37.60108849999989],
-    // Уровень масштабирования. Допустимые значения:
-    // от 0 (весь мир) до 19.
-    zoom: 13,
-  });
+  var myMap = new ymaps.Map(
+    "map",
+    {
+      center: [55.75847411879586, 37.60108849999989],
+      zoom: 13,
+      controls: ["smallMapDefaultSet"],
+    },
 
+    {
+      searchControlProvider: "yandex#search",
+    }
+  );
 
   //myMap.controls.remove('geolocationControl'); // удаляем геолокацию
   myMap.controls.remove("searchControl"); // удаляем поиск
@@ -279,7 +304,6 @@ function init() {
   // myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
   myMap.controls.remove("rulerControl"); // удаляем контрол правил
   myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
-
 
   var myPlacemark = new ymaps.Placemark(
     [55.75847411879586, 37.60108849999989],
@@ -327,7 +351,6 @@ validation.addField("#name", [
   },
 ]);
 
-
 validation.addField("#tel", [
   {
     validator: (value) => {
@@ -345,3 +368,43 @@ validation.addField("#tel", [
   },
 ]);
 
+// Search Form
+
+let search = document.querySelector(".form-search");
+let close = document.querySelector(".form-search-close");
+
+document.getElementById("open").addEventListener("click", () => {
+  search.classList.add("form-search-show");
+  search.removeAttribute("inert");
+  document.getElementById("open").classList.add("header__search-close");
+});
+
+close.addEventListener("click", () => {
+  search.classList.remove("form-search-show");
+  document.getElementById("open").classList.remove("header__search-close");
+});
+
+document.getElementById("open").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+// Burger
+
+let burgerBtn = document.querySelector(".burger");
+let burgerMenu = document.querySelector(".burger__nav");
+let burgerLinks = document.querySelectorAll(".burger__nav");
+burgerMenu.inert = true;
+
+burgerBtn.addEventListener("click", () => {
+  burgerMenu.classList.add("burger__nav-active");
+  burgerMenu.removeAttribute("inert");
+  burgerMenu.inert = false;
+  document.body.classList.toggle("stop-scroll");
+});
+
+burgerLinks.forEach(function (el) {
+  el.addEventListener("click", function () {
+    burgerMenu.classList.remove("burger__nav-active");
+    document.body.classList.remove("stop-scroll");
+  });
+});
