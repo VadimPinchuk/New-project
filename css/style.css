@@ -15,6 +15,7 @@ html {
   --main: #9d5cd0;
   --two: #7943a4;
   --outline: 2px solid var(--main);
+  --swiper-pagination-bullet-horizontal-gap: 7px;
 }
 
 :root {
@@ -87,6 +88,7 @@ a:focus {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 ul {
@@ -179,7 +181,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* height: 768px; */
   height: 100vh;
   width: 100%;
   background-color: #000000;
@@ -239,12 +240,29 @@ p {
 }
 
 .burger__enter-btn {
+  position: relative;
   margin-top: auto;
   cursor: pointer;
   padding: 20px 88px;
   border: 3px solid #9d5cd0;
   border-radius: 100px;
   transition: all 0.3s ease-in-out;
+}
+
+.burger__enter-btn::before {
+  position: absolute;
+  content: "";
+  top: 28px;
+  left: 87px;
+  width: 5px;
+  height: 6px;
+  background-color: #000000;
+  opacity: 1;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.burger__enter-img path {
+  fill: var(--white-color);
 }
 
 .burger__enter-btn:focus:not(:hover):not(:active) {
@@ -259,6 +277,16 @@ p {
 .burger__enter-btn:active {
   background-color: var(--violet-dark);
   border-color: var(--violet-ultra-light);
+}
+
+.burger__enter-btn:hover::before {
+  background-color: var(--violet-middle);
+  transform: translateX(-6px);
+}
+
+.burger__enter-btn:active::before {
+  background-color: var(--violet-dark);
+  transform: translateX(-6px);
 }
 
 .burger__enter-text {
@@ -378,7 +406,6 @@ p {
   display: inline-block;
   width: 18px;
   height: 13px;
-  /* margin-right: 7px; */
   vertical-align: baseline;
   fill: #ffffff;
   transition: fill 0.3s ease-in-out;
@@ -669,12 +696,12 @@ p {
 .main__item-heading span::after {
   content: "";
   position: absolute;
-  width: 105%;
+  width: 107%;
   height: 30px;
   /* top: 16px;
   left: 0; */
   top: 23px;
-  left: -4px;
+  left: -6px;
   background-color: #7943a4;
   z-index: -1;
   opacity: 0;
@@ -937,7 +964,6 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   height: 800px;
 }
@@ -974,6 +1000,19 @@ p {
 
 .hero__content > * {
   pointer-events: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .hero__title {
@@ -1107,7 +1146,7 @@ p {
 .is-open .choices__list--dropdown {
   border: 1px solid #999999;
   border-radius: 6px;
-  background-color: transparent;
+  background-color: #000000;
 }
 
 .choices__list--dropdown .choices__item,
@@ -1462,7 +1501,6 @@ p {
 
 .painter-name-panel {
   margin-bottom: 5px;
-
 }
 
 .painter-descr-panel {
@@ -1629,7 +1667,7 @@ p {
 
 .accordion__content-wrap {
   padding-top: 26px;
-  padding-bottom: 26px;
+  padding-bottom: 55px;
 }
 
 .text {
@@ -1807,18 +1845,19 @@ p {
 .doings__swiper-slide {
   /* width: calc((100% - (50 * 2)) / 3); */
   height: auto;
+  display: flex;
 }
 
 .doings__article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
   min-height: 700px;
 }
 
 .doings__article-img {
   margin-bottom: 13px;
+  width: 100%;
 }
 
 .doings__article-place {
@@ -2010,6 +2049,24 @@ p {
   box-shadow: inset 0 0 0 2px #9d5cd0;
 }
 
+.doing-swiper-pagination {
+  display: none;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -25px;
+  left: -3px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #666666;
+}
+
 /** Projects **/
 
 .projects {
@@ -2023,7 +2080,8 @@ p {
 .projects__content {
   line-height: 2;
   margin-bottom: 24px;
-  max-width: 1078px;
+  width: 101%;
+  padding-right: 538px;
 }
 
 .projects__content-tooltip {
@@ -2159,8 +2217,12 @@ p {
   margin-bottom: 23px;
 }
 
+.visible {
+  display: none;
+}
+
 .projects__swiper {
-  width: 90.6%;
+  width: 91%;
 }
 
 .projects__swiper-box {
@@ -2273,6 +2335,11 @@ p {
   left: 2px;
 }
 
+.map {
+  width: 100%;
+  height: 700px;
+}
+
 /** Contacts **/
 
 .contacts__wrapper {
@@ -2300,6 +2367,12 @@ p {
   display: flex;
   /* max-width: 909px; */
   width: 56.8%;
+}
+
+.contacts__inputs {
+  display: flex;
+
+  width: 100%;
 }
 
 .contacts__form-input {
@@ -2358,7 +2431,7 @@ p {
 }
 
 .contacts__form-btn {
-  width: 45.2%;
+  width: 57.2%;
   max-width: 330px;
   white-space: nowrap;
   font-weight: 700;

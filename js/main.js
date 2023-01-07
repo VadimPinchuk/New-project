@@ -90,12 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     breakpoints: {
-      441: {
+      580: {
+        slidesPerGroup: 3,
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 38,
+      },
+
+      1000: {
+        slidesPerGroup: 2,
+        slidesPerView: 2,
+        spaceBetween: 34,
       },
 
       1200: {
+        slidesPerGroup: 3,
         slidesPerView: 3,
         spaceBetween: 50,
       },
@@ -219,10 +227,29 @@ const doingsSwiper = new Swiper(".doings__swiper", {
     prevEl: ".doings__swiper-btn-prev",
   },
 
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "bullets",
+  },
+
   breakpoints: {
-    441: {
+    320: {
+      slidesPerView: 1,
+
+      slidesPerGroup: 1,
+    },
+
+    700: {
+      slidesPerView: 2,
+      spaceBetween: 34,
+      slidesPerGroup: 2,
+    },
+
+    998: {
       slidesPerView: 3,
       spaceBetween: 27,
+      slidesPerGroup: 3,
     },
 
     1200: {
@@ -264,9 +291,19 @@ const projectsSwiper = new Swiper(".projects__swiper", {
   },
 
   breakpoints: {
-    441: {
+    100: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+
+    485: {
       slidesPerView: 2,
-      spaceBetween: 50,
+      spaceBetween: 10,
+    },
+
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 35,
     },
 
     1200: {
@@ -287,23 +324,37 @@ function init() {
     "map",
     {
       center: [55.75847411879586, 37.60108849999989],
-      zoom: 13,
+      zoom: 14,
       controls: ["smallMapDefaultSet"],
     },
 
     {
       searchControlProvider: "yandex#search",
+      geolocationControlPosition: { top: "300px", right: "20px" },
+      geolocationControlFloat: "none",
+      zoomControlSize: "small",
+      zoomControlFloat: "none",
+      zoomControlPosition: { top: "200px", right: "20px" },
     }
   );
 
-  //myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+
+  myMap.controls.remove("geolocationControl"); // удаляем геолокацию
   myMap.controls.remove("searchControl"); // удаляем поиск
   myMap.controls.remove("trafficControl"); // удаляем контроль трафика
   myMap.controls.remove("typeSelector"); // удаляем тип
   myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-  // myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+  myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
   myMap.controls.remove("rulerControl"); // удаляем контрол правил
   myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    myMap.controls.add("geolocationControl");
+    myMap.controls.add("zoomControl");
+  }
+
+
 
   var myPlacemark = new ymaps.Placemark(
     [55.75847411879586, 37.60108849999989],
@@ -408,3 +459,20 @@ burgerLinks.forEach(function (el) {
     document.body.classList.remove("stop-scroll");
   });
 });
+
+// Smooth scroll
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const blockID = anchor.getAttribute('href').substr(1)
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}

@@ -42,32 +42,30 @@
             </button>
             <ul class="burger__nav-list">
               <li class="burger__nav-item">
-                <a href="#about" class="nav__link"><span>О нас</span></a>
+                <a href="#about" class="nav__link burger__nav-link"><span>О нас</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#gallery" class="nav__link"><span>Галерея</span></a>
+                <a href="#gallery" class="nav__link burger__nav-link"><span>Галерея</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#catalog" class="nav__link"><span>Каталог</span></a>
+                <a href="#catalog" class="nav__link burger__nav-link"><span>Каталог</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#doings" class="nav__link"><span>События</span></a>
+                <a href="#doings" class="nav__link burger__nav-link"><span>События</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#projects" class="nav__link"><span>Проекты</span></a>
+                <a href="#projects" class="nav__link burger__nav-link"><span>Проекты</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#contacts" class="nav__link"><span>Контакты</span></a>
+                <a href="#contacts" class="nav__link burger__nav-link"><span>Контакты</span></a>
               </li>
             </ul>
             <button class="burger__enter-btn btn-reset" type="submit">
-              <svg class="burger__enter-img" width="13" height="13" viewBox="0 0 13 13" fill="none"
+              <svg class="burger__enter-img" width="18" height="13" viewBox="0 0 18 13" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
-                  fill="white" />
+                  d="M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z" />
               </svg>
-
               <span class="burger__enter-text">Войти</span>
             </button>
           </nav>
@@ -279,9 +277,10 @@
     <section class="hero">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__title">
+          <h1 class="visually-hidden">Blanchard. Художественная галерея</h1>
+          <h2 class="hero__title">
             Прикоснитесь к&nbsp;прекрасному
-          </h1>
+          </h2>
           <p class="hero__text">
             Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки
             для новых предложений
@@ -357,62 +356,91 @@
               <div class="swiper-wrapper">
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
-                    <source srcset="images/gallery1.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery1.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery1.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery1-320.jpg 1x, images/gallery1-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/gallery1-768.jpg 1x, images/gallery1-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gallery1-1024.jpg 1x, images/gallery1-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery1.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery1.jpg" srcset="images/gallery1-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
+                    <source srcset="images/gallery2-320.jpg 1x, images/gallery2-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
                     <source srcset="images/gallery2.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery2.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery2.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery2-768.jpg 1x, images/gallery2-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gllery2-1024.jpg 1x, images/gallery2-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery2.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery2.jpg" srcset="images/gallery2-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
+                    <source srcset="images/gallery3-320.jpg 1x, images/gallery3-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
                     <source srcset="images/gallery3.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery3.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery3.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery3-768.jpg 1x, images/gallery3-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gallery3-1024.jpg 1x, images/gallery3-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery3.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery3.jpg" srcset="images/gallery3-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
+                    <source srcset="images/gallery4-320.jpg 1x, images/gallery4-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
                     <source srcset="images/gallery4.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery4.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery4.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery4-768.jpg 1x, images/gallery4-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gallery4-1024.jpg 1x, images/gallery4-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery4.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery4.jpg" srcset="images/gallery4-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
+                    <source srcset="images/gallery5-320.jpg 1x, images/gallery5-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
                     <source srcset="images/gallery5.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery5.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery5.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery5-768.jpg 1x, images/gallery5-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gallery5-1024.jpg 1x, images/gallery5-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery5.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery5.jpg" srcset="images/gallery5-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__swiper-slide" href="#">
                   <picture>
+                    <source srcset="images/gallery6-320.jpg 1x, images/gallery6-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
                     <source srcset="images/gallery6.jpg" media="(max-width: 580px)">
-                    <source srcset="images/gallery6.jpg" media="(max-width: 960px)">
-                    <source srcset="images/gallery6.jpg" media="(max-width: 1360px)">
+                    <source srcset="images/gallery6-768.jpg 1x, images/gallery6-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/gallery6-1024.jpg 1x, images/gallery6-1024-2x.jpg 2x"
+                      media="(max-width: 1024px)">
 
                     <!-- Здесь картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__swiper-image" src="images/gallery6.jpg" alt="">
+                    <img class="gallery__swiper-image" src="images/gallery6.jpg" srcset="images/gallery6-2x.jpg 2x"
+                      alt="">
                   </picture>
                 </a>
               </div>
@@ -466,7 +494,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1400 по 1499 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1400 по 1499 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -632,7 +660,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1500 по 1599 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1500 по 1599 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -662,7 +690,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -692,7 +720,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1700 по 1799 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -722,7 +750,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1800 по 1899 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -752,7 +780,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 1900 по 1999 гг</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -782,7 +810,7 @@
             <li class="accordion__question ac js-enabled">
               <button class="accordion__heading ac-trigger">
                 <span class="accordion__heading-text">
-                  <span class="accordion__heading-text-wrap">C 1600 по 1699 гг.</span>
+                  <span class="accordion__heading-text-wrap">C 2000 г</span>
                 </span>
                 <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -837,25 +865,38 @@
               <!-- Slides -->
               <div class="swiper-slide doings__swiper-slide">
                 <article class="doings__article">
-                  <img class="doings__article-img" src="./images/doings-swiper1.jpg" alt="">
-
+                  <picture>
+                    <source srcset="images/doings-swiper1-320.jpg 1x, images/doings-swiper1-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/doings-swiper1-768.jpg 1x, images/doings-swiper1-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/doings-swiper1-1024.jpg 1x, images/doings-swiper1-1024@2x.jpg 2x"
+                      media="(max-width: 1024px)">
+                    <img class="doings__article-img" src="./images/doings-swiper1.jpg"
+                      srcset="images/doings-swiper1@2x.jpg 2x" alt="">
+                  </picture>
                   <span class="doings__article-place">Музей им. Щусева</span>
                   <time class="doings__article-time">с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля</time>
                   <h3 class="doings__article-title">Книжная гравюра в&nbsp;живом восприятии</h3>
                   <p class="doings__article-text">
                     Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии,
-                    которую
-                    продолжили его брат Давид и&nbsp;сын Ридольфо
-
+                    которуюпродолжили его брат Давид и&nbsp;сын Ридольфо
                   </p>
                   <a class="doings__article-link" href="#"><span>Подробнее</span></a>
-
                 </article>
               </div>
               <div class="swiper-slide doings__swiper-slide">
                 <article class="doings__article">
-                  <img class="doings__article-img" src="./images/doings-swiper2.jpg" alt="">
-
+                  <picture>
+                    <source srcset="images/doings-swiper2-320.jpg 1x, images/doings-swiper2-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/doings-swiper2-768.jpg 1x, images/doings-swiper2-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/doings-swiper2-1024.jpg 1x, images/doings-swiper2-1024@2x.jpg 2x"
+                      media="(max-width: 1024px)">
+                    <img class="doings__article-img" src="./images/doings-swiper2.jpg"
+                      srcset="images/doings-swiper2@2x.jpg 2x" alt="">
+                  </picture>
                   <span class="doings__article-place">ММОМА</span>
                   <time class="doings__article-time">24&nbsp;марта 19:00</time>
                   <h3 class="doings__article-title">&laquo;Открытая дискуссия&raquo;. Дмитрий Петров и&nbsp;Сергей
@@ -871,8 +912,16 @@
               </div>
               <div class="swiper-slide doings__swiper-slide">
                 <article class="doings__article">
-                  <img class="doings__article-img" src="./images/doings-swiper3.jpg" alt="">
-
+                  <picture>
+                    <source srcset="images/doings-swiper3-320.jpg 1x, images/doings-swiper3-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/doings-swiper3-768.jpg 1x, images/doings-swiper3-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/doings-swiper3-1024.jpg 1x, images/doings-swiper3-1024@2x.jpg 2x"
+                      media="(max-width: 1024px)">
+                    <img class="doings__article-img" src="./images/doings-swiper3.jpg"
+                      srcset="images/doings-swiper3@2x.jpg 2x" alt="">
+                  </picture>
                   <span class="doings__article-place">Еврейский музей</span>
                   <time class="doings__article-time">с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля</time>
                   <h3 class="doings__article-title">
@@ -888,7 +937,18 @@
               </div>
               <div class="swiper-slide doings__swiper-slide">
                 <article class="doings__article">
-                  <img class="doings__article-img" src="./images/doings-swiper4.jpg" alt="">
+                  <picture>
+                    <source srcset="images/doings-swiper4-320.jpg 1x, images/doings-swiper4-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/doings-swiper4-768.jpg 1x, images/doings-swiper4-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/doings-swiper4-1024.jpg 1x, images/doings-swiper4-1024@2x.jpg 2x"
+                      media="(max-width: 1024px)">
+                    <img class="doings__article-img" src="./images/doings-swiper4.jpg"
+                      srcset="images/doings-swiper4@2x.jpg 2x" alt="">
+                  </picture>
+
+
 
                   <span class="doings__article-place">ММАМ</span>
                   <time class="doings__article-time">с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая</time>
@@ -906,8 +966,16 @@
               </div>
               <div class="swiper-slide doings__swiper-slide">
                 <article class="doings__article">
-                  <img class="doings__article-img" src="./images/doings-swiper5.jpg" alt="">
-
+                  <picture>
+                    <source srcset="images/doings-swiper5-320.jpg 1x, images/doings-swiper5-320@2x.jpg 2x"
+                      media="(max-width: 484px)">
+                    <source srcset="images/doings-swiper5-768.jpg 1x, images/doings-swiper5-768@2x.jpg 2x"
+                      media="(max-width: 768px)">
+                    <source srcset="images/doings-swiper5-1024.jpg 1x, images/doings-swiper5-1024@2x.jpg 2x"
+                      media="(max-width: 1024px)">
+                    <img class="doings__article-img" src="./images/doings-swiper5.jpg"
+                      srcset="images/doings-swiper5@2x.jpg 2x" alt="">
+                  </picture>
                   <span class="doings__article-place">Третьяковка на Крымском валу</span>
                   <time class="doings__article-time">с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля</time>
                   <h3 class="doings__article-title">
@@ -920,8 +988,11 @@
                 </article>
               </div>
             </div>
+
           </div>
+          <div class="swiper-pagination doing-swiper-pagination"></div>
         </div>
+
       </div>
     </section>
 
@@ -961,7 +1032,8 @@
           </svg> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
           представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
           очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости.
-          Подробнее: <a href="#" class="projects__content-link"><span>blanchard-art.ru/projects</span></a>
+          Подробнее: <a href="#" class="projects__content-link"><span>blanchard-art.ru<span
+                class="non-visible">/projects&nbsp;</span><span class="visible">/about</span></span></a>
         </p>
         <h3 class="projects__subtitle">Партнёры проектов:</h3>
         <div class="projects__swiper-box">
@@ -982,47 +1054,47 @@
               <!-- Slides -->
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-1.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--1" src="./images/projects-slide-1.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-2.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--2" src="./images/projects-slide-2.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-3.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--3" src="./images/projects-slide-3.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-4.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--4" src="./images/projects-slide-4.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-5.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--5" src="./images/projects-slide-5.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-6.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--6" src="./images/projects-slide-6.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-7.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--7" src="./images/projects-slide-7.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-8.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--8" src="./images/projects-slide-8.png" alt="">
                 </a>
               </div>
               <div class="swiper-slide projects__swiper-slide">
                 <a href="#" class="projects__swiper-link">
-                  <img class="projects__swiper-img" src="./images/projects-slide-9.png" alt="">
+                  <img class="projects__swiper-img projects__swiper-img--9" src="./images/projects-slide-9.png" alt="">
                 </a>
               </div>
             </div>
@@ -1039,15 +1111,17 @@
             <address class="contacts__address-text">Леонтьевский переулок, дом 5/1</address>
           </div>
           <form class="contacts__form" action="#" id="form" autocomplete="off">
-            <div class="contacts__form-input-box">
-              <input class="contacts__form-input" type="text" name="name" id="name" placeholder="Имя*"
-                autocomplete="off">
+            <div class="contacts__inputs">
+              <div class="contacts__form-input-box">
+                <input class="contacts__form-input" type="text" name="name" id="name" placeholder="Имя*"
+                  autocomplete="off">
+              </div>
+              <div class="contacts__form-input-box">
+                <input class="contacts__form-input" type="tel" name="tel" id="tel" placeholder="Телефон*"
+                  autocomplete="off">
+              </div>
             </div>
-            <div class="contacts__form-input-box">
-              <input class="contacts__form-input" type="tel" name="tel" id="tel" placeholder="Телефон*"
-                autocomplete="off">
-            </div>
-            <button class="contacts__form-btn btn-reset" type="submit">Заказать обратный звонок</button>
+            <button class="contacts__form-btn btn-reset" type="submit">Заказать <span>обратный звонок</span></button>
           </form>
           <div class="contacts__messenger">
             <h3 class="contacts__messenger-title">Связаться в один клик</h3>
@@ -1099,7 +1173,7 @@
           </div>
         </div>
       </div>
-      <div class="map" id="map" style="width: 100%; height: 700px"></div>
+      <div class="map" id="map"></div>
     </section>
 
     <footer class="footer">
