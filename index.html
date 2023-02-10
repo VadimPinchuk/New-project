@@ -42,22 +42,22 @@
             </button>
             <ul class="burger__nav-list">
               <li class="burger__nav-item">
-                <a href="#about" class="nav__link burger__nav-link"><span>О нас</span></a>
+                <a href="#nav-about" class="nav__link burger__nav-link"><span>О нас</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#gallery" class="nav__link burger__nav-link"><span>Галерея</span></a>
+                <a href="#nav-gallery" class="nav__link burger__nav-link"><span>Галерея</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#catalog" class="nav__link burger__nav-link"><span>Каталог</span></a>
+                <a href="#nav-catalog" class="nav__link burger__nav-link"><span>Каталог</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#doings" class="nav__link burger__nav-link"><span>События</span></a>
+                <a href="#nav-doings" class="nav__link burger__nav-link"><span>События</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#projects" class="nav__link burger__nav-link"><span>Проекты</span></a>
+                <a href="#nav-projects" class="nav__link burger__nav-link"><span>Проекты</span></a>
               </li>
               <li class="burger__nav-item">
-                <a href="#contacts" class="nav__link burger__nav-link"><span>Контакты</span></a>
+                <a href="#nav-contacts" class="nav__link burger__nav-link"><span>Контакты</span></a>
               </li>
             </ul>
             <button class="burger__enter-btn btn-reset" type="submit">
@@ -79,22 +79,22 @@
           <nav class="header__nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#about" class="nav__link"><span>О нас</span></a>
+                <a href="#nav-about" class="nav__link"><span>О нас</span></a>
               </li>
               <li class="nav__item">
-                <a href="#gallery" class="nav__link"><span>Галерея</span></a>
+                <a href="#nav-gallery" class="nav__link"><span>Галерея</span></a>
               </li>
               <li class="nav__item">
-                <a href="#catalog" class="nav__link"><span>Каталог</span></a>
+                <a href="#nav-catalog" class="nav__link"><span>Каталог</span></a>
               </li>
               <li class="nav__item">
-                <a href="#doings" class="nav__link"><span>События</span></a>
+                <a href="#nav-doings" class="nav__link"><span>События</span></a>
               </li>
               <li class="nav__item">
-                <a href="#projects" class="nav__link"><span>Проекты</span></a>
+                <a href="#nav-projects" class="nav__link"><span>Проекты</span></a>
               </li>
               <li class="nav__item">
-                <a href="#contacts" class="nav__link"><span>Контакты</span></a>
+                <a href="#nav-contacts" class="nav__link"><span>Контакты</span></a>
               </li>
             </ul>
           </nav>
@@ -158,8 +158,10 @@
                         class="main__item-link main__item-link--leonardo">Леонардо</a></li>
                     <li class="main__dropdown-item"><a href=""
                         class="main__item-link main__item-link--verokkio">Верроккьо</a></li>
-                    <li class="main__dropdown-item"><a href="" class="main__item-link">Тинторрето</a></li>
-                    <li class="main__dropdown-item"><a href="" class="main__item-link">Тинторрето</a></li>
+                    <li class="main__dropdown-item"><a href=""
+                        class="main__item-link main__item-link--tintoretto">Тинторрето</a></li>
+                    <li class="main__dropdown-item"><a href=""
+                        class="main__item-link main__item-link--tintoretto">Тинторрето</a></li>
                   </ul>
                 </div>
               </div>
@@ -280,6 +282,7 @@
           <h1 class="visually-hidden">Blanchard. Художественная галерея</h1>
           <h2 class="hero__title">
             Прикоснитесь к&nbsp;прекрасному
+
           </h2>
           <p class="hero__text">
             Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки
@@ -301,7 +304,7 @@
       </div>
 
     </section>
-    <section class="about" id="about">
+    <section class="about" id="nav-about">
       <div class="container">
         <h2 class="about__title title">О&nbsp;нас</h2>
         <p class="about__text">
@@ -318,7 +321,7 @@
       </div>
     </section>
 
-    <section class="gallery gallery__swiper-section" id="gallery">
+    <section class="gallery gallery__swiper-section" id="nav-gallery">
       <div class="container">
         <div class="gallery__wrapper">
           <div class="gallery__left-block">
@@ -354,7 +357,7 @@
             </div>
             <div class="swiper-container gallery__swiper-container">
               <div class="swiper-wrapper">
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery1-320.jpg 1x, images/gallery1-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -368,7 +371,7 @@
                       alt="">
                   </picture>
                 </a>
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" href="#modal-2" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery2-320.jpg 1x, images/gallery2-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -383,7 +386,7 @@
                       alt="">
                   </picture>
                 </a>
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery3-320.jpg 1x, images/gallery3-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -398,7 +401,7 @@
                       alt="">
                   </picture>
                 </a>
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery4-320.jpg 1x, images/gallery4-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -413,7 +416,7 @@
                       alt="">
                   </picture>
                 </a>
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery5-320.jpg 1x, images/gallery5-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -428,7 +431,7 @@
                       alt="">
                   </picture>
                 </a>
-                <a class="swiper-slide gallery__swiper-slide" href="#">
+                <a class="swiper-slide gallery__swiper-slide" data-path="gallery-slide">
                   <picture>
                     <source srcset="images/gallery6-320.jpg 1x, images/gallery6-320@2x.jpg 2x"
                       media="(max-width: 484px)">
@@ -449,10 +452,47 @@
           </div>
         </div>
 
+        <div class="modal">
+          <div class="modal__overlay">
+            <div class="modal__window" id="modal-2" data-target="gallery-slide" inert>
+              <picture class="modal__window-picture">
+                <source srcset="./images/modal-320.jpg 1x, ./images/modal-320@2x.jpg 2x" media="(max-width: 630px)">
+                <source srcset="./images/modal-768.jpg 1x, ./images/modal-768@2x.jpg 2x" media="(max-width: 768px)">
+                <source srcset="./images/modal-1024.jpg 1x, ./images/modal-1024@2x.jpg 2x" media="(max-width: 1024px)">
+                <img class="modal__window-img" src="./images/modal.jpg" srcset="./images/modal@2x.jpg 2x"
+                  alt="Женщина с граблями">
+              </picture>
+              <div class="modal__window-content">
+                <h3 class="modal__window-title">Казимир Малевич</h3>
+                <div class="modal__window-subtitle">«Женщина с граблями»</div>
+                <time class="modal__window-time">1931–1932</time>
+                <p class="modal__window-text">
+                  Картина из&nbsp;второй серии крестьянского цикла работ Казимира Малевича. Художник принялся
+                  за&nbsp;её&nbsp;создание в&nbsp;1930&ndash;1931&nbsp;годах, после того, как первый цикл был утерян
+                  после
+                  Берлинской и&nbsp;Варшавской выставок в&nbsp;1927&nbsp;году.
+                </p>
+              </div>
+              <button class="modal__btn-close btn-reset">
+                <svg class="modal__btn-img" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
       </div>
     </section>
 
-    <section class="catalog" id="catalog">
+    <section class="catalog" id="nav-catalog">
       <div class="container">
         <div class="catalog__top">
           <h2 class="catalog__title title">Каталог</h2>
@@ -467,7 +507,7 @@
 
         <div class="catalog__wrap js-tabs-wrap">
           <div class="catalog__content-wrap">
-            <div class="catalog__painter-info active js-tab-content" data-target="domenico">
+            <div class="catalog__painter-info active js-tab-content" data-target="domenico" id="painter-domenico">
 
               <img class="painter-img" src="./images/dominico.jpg" alt="Доменико Гирландайо">
 
@@ -481,7 +521,57 @@
                 времени).
               </p>
             </div>
-            <div class="catalog__painter-info js-tab-content" data-target="empty">
+            <div class="catalog__painter-info js-tab-content" data-target="boltraffio" id="painter-boltraffio">
+
+              <img class="painter-img" src="./images/Giovanni_Antonio_Boltraffio_014.jpg" alt="Больтраффио, Джованни">
+
+              <h3 class="painter-name">Больтраффио, Джованни</h3>
+              <time class="painter-time">1467 – 1516</time>
+              <p class="painter-descr">Вазари сообщает, что художник происходил из&nbsp;аристократической семьи.
+                Воспитанный в&nbsp;традициях Фоппы, Бернардо Дзенале и&nbsp;Амброджо Бергоньоне, он&nbsp;прошёл обучение
+                в&nbsp;мастерской Леонардо. Его первое произведение &laquo;Воскресение Христа, святой Леонард
+                и&nbsp;святая Лючия&raquo; выполнено в&nbsp;1491 году совместно с&nbsp;Марко д&rsquo;Оджоно для
+                миланской церкви Сан-Джованни-сул-Муро. Был придворным художником Лодовико Моро и&nbsp;славился своими
+                психологическими портретами.
+              </p>
+            </div>
+
+            <div class="catalog__painter-info js-tab-content" data-target="bonsiniore" id="painter-bonsiniore">
+
+              <img class="painter-img painter-img--mod" src="./images/Francesco_Bonsignori.jpg"
+                alt="Бонсиньори, Франческо">
+
+              <h3 class="painter-name">Бонсиньори, Франческо</h3>
+              <time class="painter-time">1460 – 2 июля 1519</time>
+              <p class="painter-descr">
+                Итальянский живописец эпохи Возрождения. Родился около 1460 года в&nbsp;Вероне в&nbsp;семье художника
+                Альберто Бонсиньори. Обучался живописи
+                в&nbsp;мастерской Франческо Бенальо. В&nbsp;1480 году переехал из&nbsp;Вероны в&nbsp;Венецию, где жил
+                до&nbsp;1487&nbsp;года. В&nbsp;ранний период творчества находился под влиянием венецианской живописной
+                школы. Особенное впечатление на&nbsp;Бонсиньори оказало творчество Антонелло да&nbsp;Мессины, Джованни
+                Беллини, Чима да&nbsp;Конельяно и&nbsp;Альвизе Вивари
+              </p>
+            </div>
+
+            <div class="catalog__painter-info js-tab-content" data-target="veroccio" id="painter-veroccio">
+
+              <img class="painter-img painter-img--mod" src="./images/verocco.jpg" alt="Андреа Верроккьо">
+
+              <h3 class="painter-name">Андреа Верроккьо</h3>
+              <time class="painter-time">1435 – 10 октября 1488</time>
+              <p class="painter-descr">
+                Андреа дель Верроккьо родился и&nbsp;работал во&nbsp;Флоренции. Своё имя (del Verrocchio&nbsp;&mdash;
+                &laquo;от&nbsp;Верроккьо&raquo;), он&nbsp;получил от&nbsp;своего учителя, ювелира Верроккьо.
+                Специализировался на&nbsp;скульптуре, но&nbsp;также обращался и&nbsp;к&nbsp;живописи. В&nbsp;эпоху
+                Раннего Возрождения художники работали почти исключительно по&nbsp;заказам, поэтому в&nbsp;то&nbsp;время
+                была велика роль меценатов. Эта практика особенно распространилась во&nbsp;Флоренции XV&nbsp;века, где
+                художественные мастерские осуществляли любые заказы покровителей&nbsp;&mdash; от&nbsp;росписи посуды
+                до&nbsp;архитектурных проектов. Верроккьо считался непревзойденным декоратором и&nbsp;режиссёром
+                придворных празднеств.
+              </p>
+            </div>
+
+            <div class="catalog__painter-info js-tab-content" data-target="empty" id="painter-empty">
               <img class="painter-img" src="./images/painter-none.jpg" alt="">
               <h3 class="painter-name">Что мы о нём знаем?</h3>
               <p class="painter-descr painter-descr-none">Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее
@@ -510,145 +600,145 @@
                   <ul class="accordion__inner-list reset-list">
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Бенедетто ди Биндо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Бергоньоне, Амброджо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Биссоло, Франческо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
-                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn "
-                        data-path="empty" href="#">
+                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn"
+                        data-path="boltraffio" href="#painter-boltraffio">
                         <span class="link__text">Больтраффио, Джованни</span>
                       </a>
                     </li>
                     <li class="accordion__item">
-                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn"
+                        data-path="bonsiniore" href="#painter-bonsiniore">
                         <span class="link__text">Бонсиньори, Франческо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Боттичини, Рафаэлло</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Брамантино</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Бреа, Людовико</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Бьяджо д’Антонио Туччи</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Веккьетта</span>
                       </a>
                     </li>
                     <li class="accordion__item">
-                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                      <a class="accordion__painter-link link link--text link--text-another js-tab-btn"
+                        data-path="veroccio" href="#painter-veroccio">
                         <span class="link__text">Андреа Верроккьо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn active"
-                        data-path="domenico" href="#">
+                        data-path="domenico" href="#painter-domenico">
                         <span class="link__text">Доменико Гирландайо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Беноццо Гоццоли</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Граначчи, Франческо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Грегорио ди Чекко</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Джованни да Удине</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Джованни ди Паоло</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Джорджоне</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Парентино, Бернардо</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Пезеллино</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Пьетро Перуджино</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Перуцци, Бальдассаре</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Пизанелло</span>
                       </a>
                     </li>
                     <li class="accordion__item">
                       <a class="accordion__painter-link link link--text link--text-another js-tab-btn" data-path="empty"
-                        href="#">
+                        href="#painter-empty">
                         <span class="link__text">Пинтуриккьо</span>
                       </a>
                     </li>
@@ -841,7 +931,7 @@
       </div>
     </section>
 
-    <section class="doings" id="doings">
+    <section class="doings" id="nav-doings">
       <div class="container">
         <h2 class="doings__title title">События</h2>
 
@@ -996,7 +1086,7 @@
       </div>
     </section>
 
-    <section class="projects" id="projects">
+    <section class="projects" id="nav-projects">
       <div class="container">
         <h2 class="projects__title title">Проекты</h2>
         <p class="projects__content">
@@ -1103,14 +1193,21 @@
       </div>
     </section>
 
-    <section class="contacts" id="contacts">
+    <section class="contacts" id="nav-contacts">
       <div class="container">
         <div class="contacts__wrapper">
           <div class="contacts__address">
             <h3 class="contacts__address-title">Шоурум №4</h3>
             <address class="contacts__address-text">Леонтьевский переулок, дом 5/1</address>
           </div>
-          <form class="contacts__form" action="#" id="form" autocomplete="off">
+          <form class="contacts__form" action="mail.php" id="form" method="POST" autocomplete="off">
+
+
+            <input type="hidden" name="project_name" value="Blanchard">
+            <input type="hidden" name="admin_email" value="pinchuk138@gmail.com">
+            <input type="hidden" name="form_subject" value="Form Subject">
+
+
             <div class="contacts__inputs">
               <div class="contacts__form-input-box">
                 <input class="contacts__form-input" type="text" name="name" id="name" placeholder="Имя*"
@@ -1223,6 +1320,8 @@
   <script src="./js/choices.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="./js/mail.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

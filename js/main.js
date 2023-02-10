@@ -315,21 +315,19 @@ const projectsSwiper = new Swiper(".projects__swiper", {
 
 // MAP
 
-// Функция ymaps.ready() будет вызвана, когда
-// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 ymaps.ready(init);
 function init() {
-  // Создание карты.
-  var myMap = new ymaps.Map(
+  const mapElem = document.querySelector("#map");
+  const myMap = new ymaps.Map(
     "map",
     {
       center: [55.75847411879586, 37.60108849999989],
       zoom: 14,
-      controls: ["smallMapDefaultSet"],
+      controls: ["geolocationControl", "zoomControl"],
     },
-
     {
-      searchControlProvider: "yandex#search",
+      suppressMapOpenBlock: true,
+      geolocationControlSize: "large",
       geolocationControlPosition: { top: "300px", right: "20px" },
       geolocationControlFloat: "none",
       zoomControlSize: "small",
@@ -338,23 +336,28 @@ function init() {
     }
   );
 
-
-  myMap.controls.remove("geolocationControl"); // удаляем геолокацию
-  myMap.controls.remove("searchControl"); // удаляем поиск
-  myMap.controls.remove("trafficControl"); // удаляем контроль трафика
-  myMap.controls.remove("typeSelector"); // удаляем тип
-  myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-  myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
-  myMap.controls.remove("rulerControl"); // удаляем контрол правил
-  myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
-
-
-  if (window.matchMedia("(min-width: 769px)").matches) {
-    myMap.controls.add("geolocationControl");
-    myMap.controls.add("zoomControl");
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    if (Object.keys(myMap.controls._controlKeys).length) {
+      myMap.controls.remove("zoomControl");
+      myMap.controls.remove("geolocationControl");
+    }
   }
 
+  myMap.behaviors.disable("scrollZoom");
 
+  myMap.events.add("sizechange", function (e) {
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      if (Object.keys(myMap.controls._controlKeys).length) {
+        myMap.controls.remove("zoomControl");
+        myMap.controls.remove("geolocationControl");
+      }
+    } else {
+      if (!Object.keys(myMap.controls._controlKeys).length) {
+        myMap.controls.add("zoomControl");
+        myMap.controls.add("geolocationControl");
+      }
+    }
+  });
 
   var myPlacemark = new ymaps.Placemark(
     [55.75847411879586, 37.60108849999989],
@@ -367,9 +370,8 @@ function init() {
     }
   );
 
-  // Размещение геообъекта на карте.
-
   myMap.geoObjects.add(myPlacemark);
+  myMap.container.fitToViewport();
 }
 
 // Validate
@@ -378,6 +380,8 @@ var selector = document.querySelector("input[type='tel']");
 
 var im = new Inputmask("+7(999) 999-99-99");
 im.mask(selector);
+
+
 
 let validation = new JustValidate("#form", {
   errorLabelStyle: {
@@ -403,6 +407,10 @@ validation.addField("#name", [
 ]);
 
 validation.addField("#tel", [
+  {
+    rule: "required",
+    errorMessage: "Вы не ввели телефон",
+  },
   {
     validator: (value) => {
       const tel = selector.inputmask.unmaskedvalue();
@@ -462,17 +470,62 @@ burgerLinks.forEach(function (el) {
 
 // Smooth scroll
 
-const anchors = document.querySelectorAll('a[href*="#"]')
-
+const anchors = document.querySelectorAll('a[href*="#painter-"]');
 for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
-
-    const blockID = anchor.getAttribute('href').substr(1)
-
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const media = window.matchMedia("(max-width: 1000px)");
+    const blockID = anchor.getAttribute("href").substr(1);
+    if (media.matches) {
+      document.getElementById(blockID).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
 }
+
+// Modal windows
+
+const modalBtn = document.querySelectorAll(".gallery__swiper-slide");
+const modalOverlay = document.querySelector(".modal__overlay");
+const modal = document.querySelectorAll(".modal");
+const closeBtn = document.querySelectorAll(".modal__btn-close");
+modalBtn.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    let path = e.currentTarget.getAttribute("data-path");
+
+    modal.forEach((el) => {
+      el.classList.remove(".modal__window-visible");
+    });
+
+    document
+      .querySelector(`[data-target = "${path}"]`)
+      .classList.add("modal__window-visible");
+
+    modalOverlay.classList.add("modal__overlay-visible");
+    document.querySelector(`[data-target = ${path}]`).removeAttribute("inert");
+
+    document.body.classList.toggle("stop-scroll");
+  });
+});
+
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target == modalOverlay) {
+    modal.forEach((el) => {
+      el.classList.remove(".modal__window-visible");
+    });
+
+    modalOverlay.classList.remove("modal__overlay-visible");
+  }
+});
+
+closeBtn.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    modal.forEach((el) => {
+      el.classList.remove(".modal__window-visible");
+    });
+    modalOverlay.classList.remove("modal__overlay-visible");
+    document.body.classList.remove("stop-scroll");
+  });
+});
