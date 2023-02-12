@@ -1200,7 +1200,7 @@
             <h3 class="contacts__address-title">Шоурум №4</h3>
             <address class="contacts__address-text">Леонтьевский переулок, дом 5/1</address>
           </div>
-          <form class="contacts__form" action="mail.php" id="form" method="POST" autocomplete="off">
+          <form class="contacts__form form"  action="mail.php" id="form" method="POST" autocomplete="off" novalidate="novalidate">
 
 
             <input type="hidden" name="project_name" value="Blanchard">
@@ -1208,13 +1208,14 @@
             <input type="hidden" name="form_subject" value="Form Subject">
 
 
+
             <div class="contacts__inputs">
               <div class="contacts__form-input-box">
-                <input class="contacts__form-input" type="text" name="name" id="name" placeholder="Имя*"
+                <input class="contacts__form-input" type="text"  name="name" id="name" placeholder="Имя*"
                   autocomplete="off">
               </div>
               <div class="contacts__form-input-box">
-                <input class="contacts__form-input" type="tel" name="tel" id="tel" placeholder="Телефон*"
+                <input class="contacts__form-input"  type="tel" name="tel" id="tel" placeholder="Телефон*"
                   autocomplete="off">
               </div>
             </div>
